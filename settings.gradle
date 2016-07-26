@@ -1,0 +1,3 @@
+rootProject.name = 'jazzlib'
+include 'jazzlib-core'
+

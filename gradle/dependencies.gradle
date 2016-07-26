@@ -1,0 +1,52 @@
+
+repositories {
+    mavenCentral()
+}
+
+project.ext {
+    // spring
+    springVersion = '4.2.6.RELEASE'
+    // JSON
+    jacksonVersion = '2.7.1'
+    // unit test
+    junitVersion = '4.11'
+    hamcrestVersion = '1.3'
+    // util
+    commonsLang3Version = '3.4'
+    commonsIOVersion = '2.4'
+    // logging
+    slf4jVersion = '1.7.21'
+    logbackVersion = '1.1.5'
+}
+
+dependencyManagement {
+
+    dependencies {
+        // spring
+        dependency "org.springframework:spring-core:${springVersion}"
+        dependency "org.springframework:spring-test:${springVersion}"
+
+        // JSON
+        dependency "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
+        dependency "com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}"
+
+        // unit test
+        dependency "junit:junit:${junitVersion}"
+        dependency "org.hamcrest:hamcrest-all:${hamcrestVersion}"
+
+        // util
+        dependency "org.apache.commons:commons-lang3:${commonsLang3Version}"
+        dependency "commons-io:commons-io:${commonsIOVersion}"
+
+        // logging
+        dependency "ch.qos.logback:logback-classic:${logbackVersion}"
+        dependency "org.slf4j:slf4j-api:${slf4jVersion}"
+    }
+}
+
+dependencies {
+    compile 'org.slf4j:slf4j-api'
+    testCompile 'junit:junit'
+    testRuntime 'ch.qos.logback:logback-classic'
+    testCompile 'org.hamcrest:hamcrest-all'
+}
